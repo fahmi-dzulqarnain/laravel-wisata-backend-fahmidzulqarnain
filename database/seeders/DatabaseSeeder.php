@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Product;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,12 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test Fahmi',
+            'name' => 'Fahmi Dzulqarnain',
             'email' => 'fdz.fhz1302@gmail.com',
             'password' => Hash::make('Bismillah**'),
         ]);
+
+        Category::factory(2)->create();
+
+        Product::factory(13)->create();
     }
 }
